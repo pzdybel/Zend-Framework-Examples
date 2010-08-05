@@ -1,0 +1,15 @@
+<h1>Newsy z pierwszej bazy:</h1>
+<?php foreach($this->db1 as $row): ?>
+<p>Id: <?php echo $row->id ?></p>
+<p>Topic: <?php echo $row->topic ?></p>
+<p>Text: <?php echo $row->text ?></p>
+<br />
+<?php endforeach; ?>
+<br />
+<h1>Newsy z drugiej bazy:</h1>
+<?php foreach($this->db2 as $row): ?>
+<p>Id: <?php echo $row->id ?></p>
+<p>Topic: <?php echo $row->topic ?></p>
+<p>Text: <?php echo $row->text ?></p>
+<br />
+<?php endforeach; ?>
