@@ -5,4 +5,4 @@ Opis działania aplikacji:
 Przykładowa aplikacja wykorzystująca technologię AJAX do komunikacji z serwerem
 
 Uwagi:
-Przed uruchomieniem aplikacji należy wgrać plik photos.sql do bazy danych.
+Przed uruchomieniem aplikacji ściągamy paczkę "Zend Framework 1.x.x Full" ze strony http://framework.zend.com/download/latest, rozpakowywujemy ją oraz przekopiowywujemy katalog ZendFramework-1.x.x/extras/library/ZendX do katalogu Ajax/library. Na końcu wgrywamy plik photos.sql do bazy danych.
