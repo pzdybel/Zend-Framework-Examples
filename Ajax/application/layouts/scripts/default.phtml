@@ -1,0 +1,22 @@
+<?php echo $this->doctype() ?>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Test</title>
+    <?php	
+    if($this->jQuery()->isEnabled()){
+		$this->jQuery()->setLocalPath($this->baseUrl('/scripts/jquery-1.4.2.min.js'))
+		               ->setUiLocalPath($this->baseUrl('/scripts/jquery-ui-1.8.1.custom.min.js'))
+		               ->addStylesheet($this->baseUrl('/styles/ui-lightness/jquery-ui-1.8.1.custom.css'));
+		echo $this->jQuery();
+	}
+	
+	?>
+	<?php echo $this->headScript() ?>
+	<?php echo $this->headLink() ?>
+</head>
+<body>
+	<h1>Ajax Test</h1>
+	<?php echo $this->layout()->content ?>
+</body>
+</html>

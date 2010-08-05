@@ -1,0 +1,7 @@
+<h2>Zdjęcia</h2>
+<?php foreach($this->photos as $photo): ?>
+<p>Id: <?php echo $photo->id ?></p>
+<p>Votes: <span id="votes_count<?php echo $photo->id ?>"><?php echo $photo->votes_up-$photo->votes_down ?></span></p>
+<p><span id="vote_buttons<?php echo $photo->id ?>"><a href="#" class="vote_up" id="<?php echo $photo->id ?>">/\</a> | <a href="#" class="vote_down" id="<?php echo $photo->id ?>">\/</a></span></p>
+<br />
+<?php endforeach; ?>

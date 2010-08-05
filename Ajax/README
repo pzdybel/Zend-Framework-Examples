@@ -1,0 +1,8 @@
+Nazwa aplikacji: Ajax
+Autor: Michał Korus (deallas)
+
+Opis działania aplikacji:
+Przykładowa aplikacja wykorzystująca technologię AJAX do komunikacji z serwerem
+
+Uwagi:
+Przed uruchomieniem aplikacji należy wgrać plik photos.sql do bazy danych.
