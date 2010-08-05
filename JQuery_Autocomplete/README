@@ -1,0 +1,8 @@
+Nazwa aplikacji: JQuery_Autocomplete
+Autor: Michał Korus (deallas)
+
+Opis działania aplikacji:
+Przykładowa aplikacja wykorzystująca technologię AJAX do podpowiadania treści z wykorzystaniem biblioteki jQuery oraz pluginu Autocomplete
+
+Uwagi:
+Przed uruchomieniem aplikacji ściągamy paczkę "Zend Framework 1.x.x Full" ze strony http://framework.zend.com/download/latest, rozpakowywujemy ją oraz przekopiowywujemy katalog ZendFramework-1.x.x/extras/library/ZendX do katalogu Ajax/library. Na końcu wgrywamy plik keywords.sql do bazy danych.
