@@ -1,0 +1,7 @@
+<h1>Albumy</h1>
+<?php echo $this->form ?>
+
+<?php if(isset($this->album) && isset($this->category)): ?>
+<p>Album: <?php echo $this->album['name'] . ' [ id: ' . $this->album['id'] . ' ]' ?></p>
+<p>Kategoria: <?php  echo $this->category['name'] . ' [ id: ' . $this->category['id'] . ' ]' ?></p>
+<?php endif; ?>

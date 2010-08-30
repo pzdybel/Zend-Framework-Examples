@@ -1,0 +1,8 @@
+Nazwa aplikacji: JQuery_Double_Select
+Autor: Michał Korus (deallas)
+
+Opis działania aplikacji:
+Przykładowa aplikacja z dwupoziomową dynamiczną listą
+
+Uwagi:
+Przed uruchomieniem aplikacji ściągamy paczkę "Zend Framework 1.x.x Full" ze strony http://framework.zend.com/download/latest, rozpakowywujemy ją oraz przekopiowywujemy katalog ZendFramework-1.x.x/extras/library/ZendX do katalogu JQuery_Double_Select/library. Na końcu wgrywamy plik db.sql do bazy danych.
