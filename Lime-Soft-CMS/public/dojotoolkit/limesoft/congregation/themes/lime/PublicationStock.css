@@ -1,0 +1,17 @@
+.congPublicationStock {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+.congPublicationStockWrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.congPublicationStockLeft {
+	width: 150px;
+}
+
+.congPublicationStockContent {
+}

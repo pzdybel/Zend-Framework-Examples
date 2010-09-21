@@ -1,0 +1,40 @@
+<div id="${id}" class="lsLogin" dojoAttachPoint="container">
+	<p dojoAttachPoint="messageNode" class="lsLoginMessage"></p>
+	<form action="" method="post" class="lsLoginForm">
+		<p class="lsLoginElement">
+			<label class="lsLoginLabel">
+				Username<br />
+				<input type="text"
+					dojoType="dijit.form.TextBox"
+					dojoAttachPoint="usernameNode"
+					dojoAttachEvent="onKeyPress:_onKeyPress,onKeyUp:validate"
+					class="lsLoginInput"
+					maxLength="32"
+					tabindex="10"
+				/>
+			</label>
+		</p>
+		<p class="lsLoginElement">
+			<label class="lsLoginLabel">
+				Password<br />
+				<input type="password"
+					dojoType="dijit.form.TextBox"
+					dojoAttachPoint="passwordNode"
+					dojoAttachEvent="onKeyPress:_onKeyPress,onKeyUp:validate"
+					class="lsLoginInput"
+					maxLength="64"
+					tabindex="20"
+				/>
+			</label>
+		</p>
+		<p class="lsLoginButtonWrapper">
+			<button type="button"
+				dojoType="dijit.form.Button"
+				dojoAttachPoint="buttonNode"
+				iconClass="lsIconUserSmall"
+				class="lsLoginButton"
+				tabindex="30">Sign in
+			</button>
+		</p>
+	</form>
+</div>

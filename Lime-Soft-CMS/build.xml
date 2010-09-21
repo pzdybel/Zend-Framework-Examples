@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lime-soft-cms" default="build" basedir=".">
+
+	<path id="svnant.class.path">
+		<pathelement location="utils/jars/svnant.jar" />
+		<pathelement location="utils/jars/svnClientAdapter.jar" />
+		<pathelement location="utils/jars/svnjavahl.jar" />
+		<pathelement location="utils/jars/svnkit.jar" />
+	</path>
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="svnant.class.path" />
+
+	<property name="project.version" value="0.1.0-dev" />
+	<property name="distribution.file" value="./distribution/${ant.project.name}-${project.version}.tar.gz" />
+
+	<!-- ============================================  -->
+	<!-- target: svn-update                            -->
+	<!-- ============================================  -->
+	<target name="svn-update" description="SVN Update">
+		<svn>
+			<update dir="." recurse="true" />
+		</svn>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- target: setup                                 -->
+	<!-- ============================================  -->
+	<target name="setup" description="Sets up the Project">
+		<exec dir="${basedir}" executable="junction">
+			<arg line="${basedir}/application/modules/congregation" />
+			<arg line="${basedir}/modules/congregation/module" />
+		</exec>
+		<exec dir="${basedir}" executable="junction">
+			<arg line="${basedir}/public/dojotoolkit/limesoft/congregation" />
+			<arg line="${basedir}/modules/congregation/public/dojotoolkit/limesoft/congregation" />
+		</exec>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- target: generate-sprites                      -->
+	<!-- ============================================  -->
+	<target name="generate-sprites" depends="setup" description="Generate Sprite Images">
+		<exec dir="${basedir}/utils/jars/" executable="java">
+			<arg line="-jar css-sprite-builder.jar" />
+			<arg line="--input-dir=${basedir}\public\dojotoolkit\limesoft\themes\lime\images\icons\" />
+			<arg line="--output-sprite=${basedir}\public\dojotoolkit\limesoft\themes\lime\images\sprite_application.png" />
+			<arg line="--output-css=${basedir}\public\dojotoolkit\limesoft\themes\lime\images\sprite_application.css" />
+			<arg line="--image-size=32" />
+			<arg line="--css-prefix=lsIcon" />
+			<arg line="--css-sprite-name=sprite_application.png" />
+		</exec>
+		<exec dir="${basedir}/utils/jars/" executable="java">
+			<arg line="-jar css-sprite-builder.jar" />
+			<arg line="--input-dir=${basedir}\public\dojotoolkit\limesoft\themes\lime\images\icons\" />
+			<arg line="--output-sprite=${basedir}\public\dojotoolkit\limesoft\themes\lime\images\sprite_small_application.png" />
+			<arg line="--output-css=${basedir}\public\dojotoolkit\limesoft\themes\lime\images\sprite_small_application.css" />
+			<arg line="--image-size=16" />
+			<arg line="--css-prefix=lsIcon" />
+			<arg line="--css-postfix=Small" />
+			<arg line="--css-sprite-name=sprite_small_application.png" />
+		</exec>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- target: js-compile                            -->
+	<!-- ============================================  -->
+	<target name="js-compile" depends="generate-sprites" description="Compile JavaScript">
+		<exec dir="${basedir}/public/dojotoolkit/util/buildscripts/" executable="${basedir}/public/dojotoolkit/util/buildscripts/build.bat">
+			<arg line="profileFile=${basedir}/public/dojotoolkit/limesoft.profile.js" />
+			<arg line="releaseDir=${basedir}/public/dojotoolkit/" />
+			<arg line="releaseName=build" />
+			<arg line="action=clean,release" />
+			<arg line="copyTests=false" />
+			<arg line="stripConsole=all" />
+			<arg line="optimize=shrinksafe" />
+			<arg line="cssOptimize=comments" />
+		</exec>
+		<delete dir="public/dojotoolkit/build/limesoft/themes/lime/images/icons/" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- (DEFAULT) target: build                       -->
+	<!-- ============================================  -->
+	<target name="build" depends="js-compile" description="Build">
+		<delete file="${distribution.file}" />
+		<tar destfile="${distribution.file}" compression="gzip">
+			<fileset dir=".">
+				<include name="application/**" />
+				<include name="database/model.sql" />
+				<include name="database/procedures.sql" />
+				<include name="library/**" />
+				<include name="public/dojotoolkit/build/**" />
+				<include name="public/.htaccess" />
+				<include name="public/index.php" />
+				<include name="CHANGELOG" />
+				<include name="LICENSE" />
+				<include name="README" />
+				<exclude name=".svn" />
+			</fileset>
+		</tar>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- target: deploy                                -->
+	<!-- ============================================  -->
+	<target name="deploy">
+		<input message="FTP server:" addproperty="ftp.server" defaultvalue="" />
+		<input message="FTP user:" addproperty="ftp.username" defaultvalue="" />
+		<input message="FTP password:" addproperty="ftp.password" defaultvalue="" />
+		<ftp
+			server="${ftp.server}"
+			port="21"
+			userid="${ftp.username}"
+			password="${ftp.password}"
+			remotedir="."
+			binary="no"
+			systemTypeKey="UNIX"
+			newer="yes"
+			timediffauto="true">
+			<fileset dir=".">
+				<include name="${distribution.file}" />
+			</fileset>
+		</ftp>
+	</target>
+
+</project>

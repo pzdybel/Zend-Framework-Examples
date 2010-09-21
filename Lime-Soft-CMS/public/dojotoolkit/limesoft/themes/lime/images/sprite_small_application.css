@@ -1,0 +1,16 @@
+.lsIconAcceptSmall,
+.lsIconCloseSmall,
+.lsIconNavLeftBueSmall,
+.lsIconRevokeSmall,
+.lsIconUserSmall
+{
+	background-image: url('sprite_small_application.png');
+	width: 16px;
+	height: 16px;
+}
+
+.lsIconAcceptSmall { background-position: -0px 0; }
+.lsIconCloseSmall { background-position: -16px 0; }
+.lsIconNavLeftBueSmall { background-position: -32px 0; }
+.lsIconRevokeSmall { background-position: -48px 0; }
+.lsIconUserSmall { background-position: -64px 0; }

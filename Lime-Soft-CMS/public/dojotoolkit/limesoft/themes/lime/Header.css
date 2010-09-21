@@ -1,0 +1,69 @@
+.lsHeader {
+	display: none;
+	height: 40px;
+	background: url('images/header.png') repeat-x scroll left top transparent;
+	color: #EEEEEE;
+	clear: both;
+}
+
+/* navigation */
+
+.lsHeaderNavigation {
+	display: none;
+	position: relative;
+	float: left;
+	clear: both;
+	cursor: pointer;
+	margin: 2px;
+	height: 34px;
+	border:1px solid #AAAAAA;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-opera-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.lsHeaderNavigation:hover {
+	background-color: #767c7e;
+}
+
+.lsHeaderNavigation .lsIconNavLeftBue {
+	position: relative;
+	float: left;
+}
+
+.lsHeaderNavigation .lsNavigationText {
+	position: relative;
+	float: right;
+	white-space: nowrap;
+}
+
+/* user */
+
+.lsHeaderUser {
+	display: none;
+	position: relative;
+	margin: 2px 5px 2px 2px;
+	float: right;
+	clear: both;
+}
+
+.lsHeaderUser .lsIconUser {
+	position: relative;
+	float: left;
+}
+
+.lsHeaderUser .lsUserName {
+	position: relative;
+	float: right;
+	white-space: nowrap;
+}
+
+.lsHeaderUser .lsUserInfo {
+	position: relative;
+	float: right;
+	white-space: nowrap;
+	cursor: pointer;
+	text-decoration: underline;
+}

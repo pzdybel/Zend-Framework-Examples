@@ -1,0 +1,47 @@
+.lsLogin {
+	display: none;
+	width: 250px;
+	border:3px solid #AAAAAA;
+	margin:1.5em;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-opera-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow:0 0 24px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow:0 0 24px rgba(0, 0, 0, 0.5);
+	-opera-box-shadow:0 0 24px rgba(0, 0, 0, 0.5);
+	-khtml-box-shadow:0 0 24px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 24px rgba(0, 0, 0, 0.5);
+}
+
+.lsLoginMessage {
+}
+
+.lsLoginForm {
+	padding-left: 10px;
+	padding-right: 20px;
+}
+
+.lsLoginElement {
+}
+
+.lsLoginLabel {
+	width: 100%;
+	color: #666666;
+}
+
+.lsLoginInput {
+	width: 100% !important;
+}
+
+.lsLoginButtonWrapper {
+	text-align: right;
+}
+
+.lsLoginButton {
+}
+
+.lsLoginButton .dijitButtonText {
+	color: #444444;
+}

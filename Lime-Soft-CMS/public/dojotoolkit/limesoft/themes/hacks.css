@@ -1,0 +1,40 @@
+/* horizontal center outer */
+.hco {
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	left: 50%;
+	float: left;
+}
+
+/* horizontal center inner */
+.hci {
+	position: relative;
+	right: 50%;
+	float: left;
+}
+
+/* vertical center outer */
+.vco {
+	display: table;
+	width: 100%;
+	height: 100%;
+	#position: relative;
+	overflow: hidden;
+}
+
+/* vertical center middle */
+.vcm {
+	display: table-cell;
+	width:100%;
+	#top: 50%;
+	#position: absolute;
+	vertical-align: middle;
+}
+
+/* vertical center inner */
+.vci {
+	width:100%;
+	#top: -50%;
+	#position: relative;
+}

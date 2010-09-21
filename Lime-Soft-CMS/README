@@ -1,0 +1,18 @@
+Nazwa aplikacji: Lime-Soft-CMS
+Autor: Daniel Stefaniuk (danstefan)
+
+Opis aplikacji:
+
+* ACL zbudowany na bazie danych
+* uruchamianie bootstrap'a tylko dla wywołanego modułu
+* usługi JSON-RPC
+* modele typu Table Data Gateway
+* ładowanie i inicjalizacja Dojo Toolkit
+* minimalizacja JavaScript
+* scalanie stylów
+* generowanie sprite'ow
+
+Uwagi:
+
+W razie problemów z uruchomieniem aplikacji zapraszam na forum: http://zend-framework.pl/forum/viewtopic.php?id=1539
+
