@@ -2,9 +2,9 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
-	protected function _initModules()
+	protected function _initPluginsAndModules()
 	{
-		$this->bootstrap('frontcontroller');
+		$this->bootstrap('modules');
 		$frontController = $this->getResource('frontcontroller');
 		$frontController->registerPlugin(new Zend_Controller_Plugin_ErrorHandler(
 			array(
